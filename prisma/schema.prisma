@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Question {
+  id   String @id @default(uuid()) // Stable identifier
+  name String @db.VarChar(255) // Question display name
+}
+
+model Answer {
+  id   String @id @default(uuid()) // Stable identifier
+  name String @db.VarChar(255) // Answer display name
+}
+
+model Quiz {
+  id   String @id @default(uuid()) // Stable identifier
+  name String @db.VarChar(255) // Quiz display name
+}
+
+model Score {
+  id   String @id @default(uuid()) // Stable identifier
+  name String @db.VarChar(255) // Score display name
+}
